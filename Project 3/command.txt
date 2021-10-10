@@ -1,0 +1,13 @@
+g++ test.cpp -std=c++14 -Wall -Wextra -o test
+
+g++ Token.cpp test2.cpp -std=c++14 -Wall -Wextra -o test2
+
+g++ difference.cpp union.cpp point.cpp rotation.cpp shift.cpp triangle.cpp ellipse.cpp rectangle.cpp circle.cpp image.cc test.cpp -std=c++14 -Wall -Wextra -o test
+
+
+g++ point.cpp shift.cpp triangle.cpp rectangle.cpp image.cc test.cpp -std=c++14 -Wall -Wextra -o test
+
+
+g++ Token.cpp difference.cpp union.cpp point.cpp rotation.cpp shift.cpp triangle.cpp ellipse.cpp rectangle.cpp circle.cpp image.cc parser.cpp -std=c++14 -Wall -Wextra -o parser
+
+g++ circle.cpp point.cpp image.cc Token.cpp parser.cpp -std=c++14 -Wall -Wextra -o parser

@@ -1,0 +1,13 @@
+size 100 100
+rect r {50 50} 90 60
+
+tri t1 r.c r.e r.ne
+tri t3 r.c r.n r.nw
+tri t5 r.c r.w r.sw
+tri t7 r.c r.s r.se
+
+fill r {1 1 1}
+fill t1 {1 0 0}
+fill t3 {.9 0 0}
+fill t5 {.8 0 0}
+fill t7 {.7 0 0}

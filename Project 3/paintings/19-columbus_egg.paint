@@ -1,0 +1,61 @@
+# Columbus egg
+# See https://en.wikipedia.org/wiki/Egg_of_Columbus_(tangram_puzzle)
+size 420 536
+rect bb {210 210} 1200 1200
+
+rect topRect (/ (+ bb.c bb.n) 2) (- bb.e bb.w).x (- bb.n bb.c).y
+rect rightRect (/ (+ bb.c bb.e) 2) (- bb.c bb.w).x (- bb.n bb.s).y
+rect bottomRect (/ (+ bb.c bb.s) 2) (- bb.e bb.w).x (- bb.c bb.s).y
+rect leftRect  (/ (+ bb.c bb.w) 2) (- bb.c bb.w).x (- bb.n bb.s).y
+
+# Dummy rect such that r.c is at (r, r), where r is center circle radius
+rect r (/ (- bb.ne bb.c) 3) 1 1
+
+circ centerCirc bb.c r.c.x
+# Left and right circles have twice the radius of center circle
+circ leftCirc centerCirc.w (* r.c 2).x
+circ rightCirc centerCirc.e (* r.c 2).x
+# Radius of top circle is 2 * r - r * sqrt(2)
+circ topCirc centerCirc.n (- (* r.c 2) (* r.c 1.41421356237309504880)).x
+circ bottomCirc centerCirc.s (- (* r.c 2) (* r.c 1.41421356237309504880)).x
+
+tri topTri topCirc.c leftCirc.n rightCirc.n
+tri rightTri centerCirc.c centerCirc.e centerCirc.n
+tri bottomTri bottomCirc.n
+              (+ bottomCirc.n (- topCirc.nw topCirc.c))
+              (+ bottomCirc.n (- topCirc.ne topCirc.c))
+tri leftTri centerCirc.c centerCirc.w centerCirc.n
+
+union middleLeftRoundedCut {rightRect bottomRect leftTri topTri}
+diff middleLeftRounded rightCirc middleLeftRoundedCut
+
+union middleRightRoundedCut {leftRect bottomRect rightTri topTri}
+diff middleRightRounded leftCirc middleRightRoundedCut
+
+union topLeftRoundedCut {rightRect leftTri middleLeftRounded}
+diff topLeftRounded topCirc topLeftRoundedCut
+
+union topRightRoundedCut {leftRect rightTri middleRightRounded}
+diff topRightRounded topCirc topRightRoundedCut
+
+union bottomLeftRoundedCut {topRect rightRect bottomTri}
+diff bottomLeftRounded centerCirc bottomLeftRoundedCut
+
+union bottomRightRoundedCut {topRect leftRect bottomTri}
+diff bottomRightRounded centerCirc bottomRightRoundedCut
+
+color red {.8 0 0}
+color plum {.46 .31 .48}
+color orange {.96 .47 0}
+color gray {.83 .84 .81}
+
+fill bb gray
+fill middleLeftRounded red
+fill middleRightRounded red
+fill topLeftRounded plum
+fill topRightRounded orange
+fill leftTri orange
+fill rightTri plum
+fill bottomTri red
+fill bottomLeftRounded plum
+fill bottomRightRounded orange

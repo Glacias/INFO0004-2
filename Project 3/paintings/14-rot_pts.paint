@@ -1,0 +1,40 @@
+size 200 200
+
+circ c0 {50 50} 40
+rot c 30 c0.c c0
+tri tc1 c.c c.e c.ne
+tri tc3 c.c c.n c.nw
+tri tc5 c.c c.w c.sw
+tri tc7 c.c c.s c.se
+
+elli e0 {50 150} 45 30
+rot e 30 e0.c e0
+tri te1 e.c e.e e.ne
+tri te3 e.c e.n e.nw
+tri te5 e.c e.w e.sw
+tri te7 e.c e.s e.se
+
+rect r0 {150 50} 90 60
+rot r 30 r0.c r0
+tri tr1 r.c r.e r.ne
+tri tr3 r.c r.n r.nw
+tri tr5 r.c r.w r.sw
+tri tr7 r.c r.s r.se
+
+tri t0 {110 110} {120 190} {190 150}
+rot t 30 t0.c t0
+tri tt1 t.c t.v1 t.s12
+tri tt3 t.c t.v2 t.s02
+tri tt5 t.c t.v0 t.s01
+
+union shapes {c e r t}
+union t1 {tc1 te1 tr1 tt1}
+union t3 {tc3 te3 tr3 tt3}
+union t5 {tc5 te5 tr5 tt5}
+union t7 {tc7 te7 tr7}
+
+fill shapes {1 1 1}
+fill t1 {1 0 0}
+fill t3 {.9 0 0}
+fill t5 {.8 0 0}
+fill t7 {.7 0 0}

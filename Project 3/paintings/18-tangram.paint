@@ -1,0 +1,36 @@
+size 300 300
+rect bb {150 150} 300 300
+
+color orange {1. 0.4 0.1}
+color green {0.016 0.4 0.11}
+color yellow {0.88 0.74 0.0}
+color brown {0.48 0.075 0.02}
+color red {0.85 0.11 0.004}
+color darkBlue {0.078 0.0039 0.25}
+color lightBlue {0.14 0.2 0.5}
+color wood {0.97 0.83 0.74}
+
+rect in bb.c 280 280
+
+tri largeTriangle1 in.sw in.nw in.c
+tri largeTriangle2 in.nw in.ne in.c
+tri mediumTriangle in.se in.s in.e
+tri smallTriangle1 in.ne largeTriangle2.s12 in.e
+tri smallTriangle2 in.c largeTriangle1.s02 mediumTriangle.s12
+
+tri squareBottom mediumTriangle.s12 in.c in.e
+tri squareTop in.c largeTriangle2.s12 in.e
+union square {squareBottom squareTop}
+
+tri parallelogramLeft in.sw largeTriangle1.s02 in.s
+tri parallelogramRight in.s largeTriangle1.s02 mediumTriangle.s12
+union parallelogram {parallelogramLeft parallelogramRight}
+
+fill bb wood
+fill largeTriangle1 orange
+fill largeTriangle2 green
+fill mediumTriangle red
+fill smallTriangle1 brown
+fill smallTriangle2 darkBlue
+fill square yellow
+fill parallelogram lightBlue

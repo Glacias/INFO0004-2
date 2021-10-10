@@ -1,0 +1,5 @@
+size 100 100
+circ out {50 50} 40
+circ in {50 50} 35
+diff d out in
+fill d {0 .5 1}

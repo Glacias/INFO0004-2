@@ -1,0 +1,352 @@
+size 800 800
+rect bb {400 400} 800 800
+rect top (/ (+ bb.c bb.n) 2) (- bb.e bb.w).x (/ (- bb.n bb.s) 2).y
+rect bot (/ (+ bb.c bb.s) 2) (- bb.e bb.w).x (/ (- bb.n bb.s) 2).y
+
+circ c0 bot.n 10
+shift spiral0 {10 0} c0
+fill spiral0 {1 .8 .8}
+
+circ c1_out bot.n 20
+circ c1_in bot.n 10
+diff ring1 c1_out c1_in
+diff spiral1 ring1 bot
+fill spiral1 {1.0 0.8 0.8}
+
+circ c2_out bot.n 30
+circ c2_in bot.n 20
+diff ring2 c2_out c2_in
+diff half_ring2 ring2 top
+shift spiral2 {10 0} half_ring2
+fill spiral2 {0.984 0.784 0.784}
+
+circ c3_out bot.n 40
+circ c3_in bot.n 30
+diff ring3 c3_out c3_in
+diff spiral3 ring3 bot
+fill spiral3 {0.969 0.769 0.769}
+
+circ c4_out bot.n 50
+circ c4_in bot.n 40
+diff ring4 c4_out c4_in
+diff half_ring4 ring4 top
+shift spiral4 {10 0} half_ring4
+fill spiral4 {0.953 0.753 0.753}
+
+circ c5_out bot.n 60
+circ c5_in bot.n 50
+diff ring5 c5_out c5_in
+diff spiral5 ring5 bot
+fill spiral5 {0.937 0.737 0.737}
+
+circ c6_out bot.n 70
+circ c6_in bot.n 60
+diff ring6 c6_out c6_in
+diff half_ring6 ring6 top
+shift spiral6 {10 0} half_ring6
+fill spiral6 {0.922 0.722 0.722}
+
+circ c7_out bot.n 80
+circ c7_in bot.n 70
+diff ring7 c7_out c7_in
+diff spiral7 ring7 bot
+fill spiral7 {0.906 0.706 0.706}
+
+circ c8_out bot.n 90
+circ c8_in bot.n 80
+diff ring8 c8_out c8_in
+diff half_ring8 ring8 top
+shift spiral8 {10 0} half_ring8
+fill spiral8 {0.89 0.69 0.69}
+
+circ c9_out bot.n 100
+circ c9_in bot.n 90
+diff ring9 c9_out c9_in
+diff spiral9 ring9 bot
+fill spiral9 {0.875 0.675 0.675}
+
+circ c10_out bot.n 110
+circ c10_in bot.n 100
+diff ring10 c10_out c10_in
+diff half_ring10 ring10 top
+shift spiral10 {10 0} half_ring10
+fill spiral10 {0.859 0.659 0.659}
+
+circ c11_out bot.n 120
+circ c11_in bot.n 110
+diff ring11 c11_out c11_in
+diff spiral11 ring11 bot
+fill spiral11 {0.843 0.643 0.643}
+
+circ c12_out bot.n 130
+circ c12_in bot.n 120
+diff ring12 c12_out c12_in
+diff half_ring12 ring12 top
+shift spiral12 {10 0} half_ring12
+fill spiral12 {0.827 0.627 0.627}
+
+circ c13_out bot.n 140
+circ c13_in bot.n 130
+diff ring13 c13_out c13_in
+diff spiral13 ring13 bot
+fill spiral13 {0.812 0.612 0.612}
+
+circ c14_out bot.n 150
+circ c14_in bot.n 140
+diff ring14 c14_out c14_in
+diff half_ring14 ring14 top
+shift spiral14 {10 0} half_ring14
+fill spiral14 {0.796 0.596 0.596}
+
+circ c15_out bot.n 160
+circ c15_in bot.n 150
+diff ring15 c15_out c15_in
+diff spiral15 ring15 bot
+fill spiral15 {0.78 0.58 0.58}
+
+circ c16_out bot.n 170
+circ c16_in bot.n 160
+diff ring16 c16_out c16_in
+diff half_ring16 ring16 top
+shift spiral16 {10 0} half_ring16
+fill spiral16 {0.765 0.565 0.565}
+
+circ c17_out bot.n 180
+circ c17_in bot.n 170
+diff ring17 c17_out c17_in
+diff spiral17 ring17 bot
+fill spiral17 {0.749 0.549 0.549}
+
+circ c18_out bot.n 190
+circ c18_in bot.n 180
+diff ring18 c18_out c18_in
+diff half_ring18 ring18 top
+shift spiral18 {10 0} half_ring18
+fill spiral18 {0.733 0.533 0.533}
+
+circ c19_out bot.n 200
+circ c19_in bot.n 190
+diff ring19 c19_out c19_in
+diff spiral19 ring19 bot
+fill spiral19 {0.718 0.518 0.518}
+
+circ c20_out bot.n 210
+circ c20_in bot.n 200
+diff ring20 c20_out c20_in
+diff half_ring20 ring20 top
+shift spiral20 {10 0} half_ring20
+fill spiral20 {0.702 0.502 0.502}
+
+circ c21_out bot.n 220
+circ c21_in bot.n 210
+diff ring21 c21_out c21_in
+diff spiral21 ring21 bot
+fill spiral21 {0.686 0.486 0.486}
+
+circ c22_out bot.n 230
+circ c22_in bot.n 220
+diff ring22 c22_out c22_in
+diff half_ring22 ring22 top
+shift spiral22 {10 0} half_ring22
+fill spiral22 {0.671 0.471 0.471}
+
+circ c23_out bot.n 240
+circ c23_in bot.n 230
+diff ring23 c23_out c23_in
+diff spiral23 ring23 bot
+fill spiral23 {0.655 0.455 0.455}
+
+circ c24_out bot.n 250
+circ c24_in bot.n 240
+diff ring24 c24_out c24_in
+diff half_ring24 ring24 top
+shift spiral24 {10 0} half_ring24
+fill spiral24 {0.639 0.439 0.439}
+
+circ c25_out bot.n 260
+circ c25_in bot.n 250
+diff ring25 c25_out c25_in
+diff spiral25 ring25 bot
+fill spiral25 {0.624 0.424 0.424}
+
+circ c26_out bot.n 270
+circ c26_in bot.n 260
+diff ring26 c26_out c26_in
+diff half_ring26 ring26 top
+shift spiral26 {10 0} half_ring26
+fill spiral26 {0.608 0.408 0.408}
+
+circ c27_out bot.n 280
+circ c27_in bot.n 270
+diff ring27 c27_out c27_in
+diff spiral27 ring27 bot
+fill spiral27 {0.592 0.392 0.392}
+
+circ c28_out bot.n 290
+circ c28_in bot.n 280
+diff ring28 c28_out c28_in
+diff half_ring28 ring28 top
+shift spiral28 {10 0} half_ring28
+fill spiral28 {0.576 0.376 0.376}
+
+circ c29_out bot.n 300
+circ c29_in bot.n 290
+diff ring29 c29_out c29_in
+diff spiral29 ring29 bot
+fill spiral29 {0.561 0.361 0.361}
+
+circ c30_out bot.n 310
+circ c30_in bot.n 300
+diff ring30 c30_out c30_in
+diff half_ring30 ring30 top
+shift spiral30 {10 0} half_ring30
+fill spiral30 {0.545 0.345 0.345}
+
+circ c31_out bot.n 320
+circ c31_in bot.n 310
+diff ring31 c31_out c31_in
+diff spiral31 ring31 bot
+fill spiral31 {0.529 0.329 0.329}
+
+circ c32_out bot.n 330
+circ c32_in bot.n 320
+diff ring32 c32_out c32_in
+diff half_ring32 ring32 top
+shift spiral32 {10 0} half_ring32
+fill spiral32 {0.514 0.314 0.314}
+
+circ c33_out bot.n 340
+circ c33_in bot.n 330
+diff ring33 c33_out c33_in
+diff spiral33 ring33 bot
+fill spiral33 {0.498 0.298 0.298}
+
+circ c34_out bot.n 350
+circ c34_in bot.n 340
+diff ring34 c34_out c34_in
+diff half_ring34 ring34 top
+shift spiral34 {10 0} half_ring34
+fill spiral34 {0.482 0.282 0.282}
+
+circ c35_out bot.n 360
+circ c35_in bot.n 350
+diff ring35 c35_out c35_in
+diff spiral35 ring35 bot
+fill spiral35 {0.467 0.267 0.267}
+
+circ c36_out bot.n 370
+circ c36_in bot.n 360
+diff ring36 c36_out c36_in
+diff half_ring36 ring36 top
+shift spiral36 {10 0} half_ring36
+fill spiral36 {0.451 0.251 0.251}
+
+circ c37_out bot.n 380
+circ c37_in bot.n 370
+diff ring37 c37_out c37_in
+diff spiral37 ring37 bot
+fill spiral37 {0.435 0.235 0.235}
+
+circ c38_out bot.n 390
+circ c38_in bot.n 380
+diff ring38 c38_out c38_in
+diff half_ring38 ring38 top
+shift spiral38 {10 0} half_ring38
+fill spiral38 {0.42 0.22 0.22}
+
+circ c39_out bot.n 400
+circ c39_in bot.n 390
+diff ring39 c39_out c39_in
+diff spiral39 ring39 bot
+fill spiral39 {0.404 0.204 0.204}
+
+circ c40_out bot.n 410
+circ c40_in bot.n 400
+diff ring40 c40_out c40_in
+diff half_ring40 ring40 top
+shift spiral40 {10 0} half_ring40
+fill spiral40 {0.388 0.188 0.188}
+
+circ c41_out bot.n 420
+circ c41_in bot.n 410
+diff ring41 c41_out c41_in
+diff spiral41 ring41 bot
+fill spiral41 {0.373 0.173 0.173}
+
+circ c42_out bot.n 430
+circ c42_in bot.n 420
+diff ring42 c42_out c42_in
+diff half_ring42 ring42 top
+shift spiral42 {10 0} half_ring42
+fill spiral42 {0.357 0.157 0.157}
+
+circ c43_out bot.n 440
+circ c43_in bot.n 430
+diff ring43 c43_out c43_in
+diff spiral43 ring43 bot
+fill spiral43 {0.341 0.141 0.141}
+
+circ c44_out bot.n 450
+circ c44_in bot.n 440
+diff ring44 c44_out c44_in
+diff half_ring44 ring44 top
+shift spiral44 {10 0} half_ring44
+fill spiral44 {0.325 0.125 0.125}
+
+circ c45_out bot.n 460
+circ c45_in bot.n 450
+diff ring45 c45_out c45_in
+diff spiral45 ring45 bot
+fill spiral45 {0.31 0.11 0.11}
+
+circ c46_out bot.n 470
+circ c46_in bot.n 460
+diff ring46 c46_out c46_in
+diff half_ring46 ring46 top
+shift spiral46 {10 0} half_ring46
+fill spiral46 {0.294 0.094 0.094}
+
+circ c47_out bot.n 480
+circ c47_in bot.n 470
+diff ring47 c47_out c47_in
+diff spiral47 ring47 bot
+fill spiral47 {0.278 0.078 0.078}
+
+circ c48_out bot.n 490
+circ c48_in bot.n 480
+diff ring48 c48_out c48_in
+diff half_ring48 ring48 top
+shift spiral48 {10 0} half_ring48
+fill spiral48 {0.263 0.063 0.063}
+
+circ c49_out bot.n 500
+circ c49_in bot.n 490
+diff ring49 c49_out c49_in
+diff spiral49 ring49 bot
+fill spiral49 {0.247 0.047 0.047}
+
+circ c50_out bot.n 510
+circ c50_in bot.n 500
+diff ring50 c50_out c50_in
+diff half_ring50 ring50 top
+shift spiral50 {10 0} half_ring50
+fill spiral50 {0.231 0.031 0.031}
+
+circ c51_out bot.n 520
+circ c51_in bot.n 510
+diff ring51 c51_out c51_in
+diff spiral51 ring51 bot
+fill spiral51 {0.216 0.016 0.016}
+
+circ c52_out bot.n 530
+circ c52_in bot.n 520
+diff ring52 c52_out c52_in
+diff half_ring52 ring52 top
+shift spiral52 {10 0} half_ring52
+fill spiral52 {0.2 0.0 0.0}
+
+circ c53_out bot.n 540
+circ c53_in bot.n 530
+diff ring53 c53_out c53_in
+diff spiral53 ring53 bot
+fill spiral53 {.12 0 0}

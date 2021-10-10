@@ -1,0 +1,70 @@
+size 640 480
+rect bb {320 240} 640 480
+
+color lightGreen {.1 1 .3}
+color skyBlue {.4 .8 1}
+color wall {1 .9 .8}
+color darkRed {.8 .1 .1}
+color yellow {1 1 0}
+color lightBrown {.6 .5 .1}
+color winBlue {.1 .2 1}
+
+fill bb skyBlue
+
+rect grass {bb.c.x (* bb.n .3).y} bb.e.x (* bb.n .6).y
+fill grass lightGreen
+
+circ sunCenter (/ (+ bb.c bb.ne) 2) 50
+tri sunSpike0 sunCenter.n sunCenter.sw sunCenter.se
+shift sunSpike1 {0 (* bb.n .04).y} sunSpike0
+rot sunSpike2 30 sunCenter.c sunSpike1
+rot sunSpike3 60 sunCenter.c sunSpike1
+rot sunSpike4 90 sunCenter.c sunSpike1
+rot sunSpike5 120 sunCenter.c sunSpike1
+rot sunSpike6 150 sunCenter.c sunSpike1
+rot sunSpike7 180 sunCenter.c sunSpike1
+rot sunSpike8 210 sunCenter.c sunSpike1
+rot sunSpike9 240 sunCenter.c sunSpike1
+rot sunSpike10 270 sunCenter.c sunSpike1
+rot sunSpike11 300 sunCenter.c sunSpike1
+rot sunSpike12 330 sunCenter.c sunSpike1
+union sun {sunCenter sunSpike1 sunSpike2 sunSpike3 sunSpike4 sunSpike5
+           sunSpike6 sunSpike7 sunSpike8 sunSpike9 sunSpike10 sunSpike11
+           sunSpike12}
+fill sun yellow
+
+rect ground {(* bb.e .45).x (* bb.n .3).y} (* bb.e .6).x (* bb.n .4).y
+tri top ground.nw (+ ground.n {0 (* bb.e .3).x}) ground.ne
+rect chimney top.s01 (* bb.n .1).y (* bb.n .4).y
+rect chimneyTop chimney.n (* bb.n .12).y (* bb.n .02).y
+union walls {ground top chimney chimneyTop}
+fill walls wall
+
+rect roof0 (- top.v1 {(* bb.e .225).x 0}) (* bb.e .45).x (* bb.n .03).y
+rot roof1 45 top.v1 roof0
+rect roof2 (+ top.v1 {(* bb.e .225).x 0}) (* bb.e .45).x (* bb.n .03).y
+rot roof3 -45 top.v1 roof2
+circ roof4 top.v1 (* bb.n .015).y
+union roof {roof1 roof3 roof4}
+fill roof darkRed
+
+rect door (+ ground.sw {(* bb.n 0.1).y (* bb.n 0.125).y})
+          (* bb.n 0.125).y (* bb.n 0.25).y
+fill door lightBrown
+
+rect winGlasses {(* bb.n .075).y (* bb.n .075).y} (* bb.n .15).y (* bb.n .15).y
+rect winStile0 winGlasses.c (* bb.n .003).y (* bb.n .15).y
+rect winStile1 winGlasses.c (* bb.n .15).y (* bb.n .003).y
+union winStiles {winStile0 winStile1}
+diff win0 winGlasses winStiles
+shift win1 (+ door.ne { (* bb.n .15).y (* bb.n -.15).y}) win0
+shift win2 (+ door.ne { (* bb.n .35).y (* bb.n -.15).y}) win0
+shift win3 (+ door.ne { (* bb.n -.05).y (* bb.n .05).y}) win0
+shift win4 (+ door.ne { (* bb.n .15).y (* bb.n .05).y}) win0
+shift win5 (+ door.ne { (* bb.n .35).y (* bb.n .05).y}) win0
+shift win6 (+ door.ne { (* bb.n .15).y (* bb.n .25).y}) win0
+circ win7 win6.c (* bb.n .075).y
+diff win8 win6 win7
+diff win9 win6 win8
+union win {win1 win2 win3 win4 win5 win9}
+fill win winBlue

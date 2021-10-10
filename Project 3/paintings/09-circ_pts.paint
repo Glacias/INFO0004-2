@@ -1,0 +1,13 @@
+size 100 100
+circ c {50 50} 40
+
+tri t1 c.c c.e c.ne
+tri t3 c.c c.n c.nw
+tri t5 c.c c.w c.sw
+tri t7 c.c c.s c.se
+
+fill c {1 1 1}
+fill t1 {1 0 0}
+fill t3 {.9 0 0}
+fill t5 {.8 0 0}
+fill t7 {.7 0 0}

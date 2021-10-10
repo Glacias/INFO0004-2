@@ -1,0 +1,6 @@
+size 100 100
+rect r {50 50} 60 40
+circ c {20 70} 15
+tri t {20 25} {50 20} {35 5}
+union u {r c t}
+fill u {0 .5 1}
