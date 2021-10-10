@@ -1,0 +1,9 @@
+
+g++ anagrams.cpp -std=c++11 -Wall -Wextra -o anagrams
+g++ main.cpp -std=c++11 -Wall -Wextra -o main
+g++ strings.cpp -std=c++11 -Wall -Wextra -o strings
+
+
+g++ test.cpp token.cpp -std=c++11 -Wall -Wextra -o test
+
+g++ parser.cpp token.cpp -std=c++11 -Wall -Wextra -o parser
